@@ -48,9 +48,20 @@
             height: 100%;
             object-fit: cover;
         }
+        .divboton{
+            margin-bottom: 5%;
+        }
         .boton{
+            width: 80px;
             text-align: center;
             border: none;
+            background-color: cadetblue;
+            padding-top: 0.5%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .boton img{
+            width: 35%;
         }
         .oscuro{
             background-color: rgb(32, 32, 32);
@@ -64,8 +75,9 @@
             for(i=0;i<imagenes.length;i++){
                 imagenes[i].addEventListener("click", cambiarImagen, false);
             }
+            document.getElementById("boton").addEventListener("click", oscurecer, false);
         });
-
+        
         function cerrarPopup (){
             $("#pop-up").remove();
         }
@@ -74,12 +86,16 @@
                 $("#imagen1").replaceWith("<img id='imagen1' src='images/0.jpg'>");
             }
         }
+        function oscurecer(){
+            $("body").toggleClass("oscuro");
+        }
+    
     </script>
 </head>
-<body>
-    <h1>Imágenes bonitas</h1>
+<body class="">
+    <h1>Imágenes de Ciudades</h1>
     <div id="pop-up">
-        <p>¡Hola! Bienvenido/a a Imágenes Bonitas.</p>
+        <p>¡Hola! Bienvenido/a a Imágenes de Ciudades.</p>
         <p>Espero que te guste mi cotenido.</p>
         <button>x</button>
     </div>
@@ -94,6 +110,6 @@
         <img src="images/8.jpg" alt="">
         <img src="images/9.jpg" alt="">
     </div>
-    <div><button class="boton">Oscurecer</button></div>
+    <div class="divboton"><button class="boton" id="boton"><img src="images/luna-eclipsando-al-sol.png" alt=""></button></div>
 </body>
 </html>

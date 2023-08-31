@@ -20,33 +20,26 @@
             padding: 5%; 
             margin: 5% 25%;
         }
-        #pop-up{
-            position: absolute;
-            text-align: center;
-            background-color: aliceblue;
-            padding: 5%;
-            border: 5px solid cadetblue;
-            border-radius: 10px;
-            top: 30%;
-            left: 25%;
-        }
-        #pop-up p{
-            margin: 5%;
-        }
-        #pop-up button{
-            padding: 1% 3%;
-            cursor: pointer;
-        }
         .text{
             margin: 5%;
             border: 5px solid cadetblue;
             padding: 5%;
         }
+        .text p{
+            margin-bottom: 5%;
+        }
         table{
             margin: auto;
+            
+        }
+        td{
+            padding: 10%;
         }
         .text-button{
             border: none;
+            padding: 2.5% 5%;
+            cursor: pointer;
+            font-size: 110%;
         }
         #gallery{
             display: grid;
@@ -79,9 +72,7 @@
     <script src="jquery-3.7.0.min.js"></script>
     <script>
         $(document).ready(()=>{
-            //cerrar ventana pop-up
-            document.getElementById("pop-up").addEventListener("click", cerrarPopup, false);
-
+            
             //cambia la primera imagen con un click
             var imagenes = document.querySelectorAll("#gallery img");
             for(i=0;i<imagenes.length;i++){
@@ -90,11 +81,12 @@
 
             //boton para cambiar el color de fondo del body
             document.getElementById("boton").addEventListener("click", oscurecer, false);
+
+            //botones de texto
+            document.getElementById("aumentar").addEventListener("click", zoom_in, false);
+            document.getElementById("disminuir").addEventListener("click", zoom_out, false);
         });
         
-        function cerrarPopup (){
-            $("#pop-up").remove();
-        }
         function cambiarImagen (num){
             if(num.target==imagen1){
                 $("#imagen1").replaceWith("<img id='imagen1' src='images/0.jpg'>");
@@ -104,28 +96,34 @@
             $("body").toggleClass("oscuro");
             $(".text").toggleClass("oscuro");
         }
+
+        function zoom_in(){
+            var size = $("#lore").css("font-size");
+            size = parseInt(size);
+            $("#lore").css("font-size", size*1.10);
+        }
+
+        function zoom_out(){
+            var size = $("#lore").css("font-size");
+            size = parseInt(size);
+            $("#lore").css("font-size", size*0.90);
+        }
     
     </script>
 </head>
 <body class="">
     <h1>Imágenes de Ciudades</h1>
-    <div id="pop-up">
-        <p>¡Hola! Bienvenido/a a Imágenes de Ciudades.</p>
-        <p>Espero que te guste mi cotenido.</p>
-        <button>x</button>
-    </div>
     <div class="divboton"><button class="boton" id="boton"><img src="images/luna-eclipsando-al-sol.png" alt=""></button></div>
     <div class="text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        <table>
-            <tr>
-                <td><button class="text-button">+</button></td>
-                <td><button class="text-button">-</button></td>
-            </tr>
-        </table>
+        <p id="lore">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div>
+            <button class="text-button" id="aumentar">+</button>
+            <button class="text-button" id="disminuir">-</button>
+        </div>
     </div>
+    
     <div id="gallery">
         <img id="imagen1" src="images/1.jpg" alt="">
         <img src="images/2.jpg" alt="">

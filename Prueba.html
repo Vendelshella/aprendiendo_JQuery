@@ -85,6 +85,19 @@
             //botones de texto
             document.getElementById("aumentar").addEventListener("click", zoom_in, false);
             document.getElementById("disminuir").addEventListener("click", zoom_out, false);
+
+            //efectos imagenes opacidad
+            var elementos=document.querySelectorAll("img");
+
+            for(var i=0;i<elementos.length;i++){
+                elementos.addEventListener("mouseover", subirOpacidad, false);
+            }
+
+            var elementos=document.querySelectorAll("img");
+
+            for(var i=0;i<elementos.length;i++){
+                elementos.addEventListener("mouseout", bajarOpacidad, false);
+            }
         });
         
         function cambiarImagen (num){
@@ -108,6 +121,20 @@
             size = parseInt(size);
             $("#lore").css("font-size", size*0.90);
         }
+
+        //efectos imagenes opacidad
+        function subirOpacidad(e){
+            if(e.target==imagen1){
+                $("#imagen1").attr("src", "images/1.jpg");
+            }
+            
+        }
+
+        function bajarOpacidad(e){
+            if(e.target==imagen1){
+                $("#imagen1").attr("src", "images/o1.jpg");
+            }        
+        }
     
     </script>
 </head>
@@ -125,15 +152,15 @@
     </div>
     
     <div id="gallery">
-        <img id="imagen1" src="images/1.jpg" alt="">
-        <img src="images/2.jpg" alt="">
-        <img src="images/3.jpg" alt="">
-        <img src="images/4.jpg" alt="">
-        <img src="images/5.jpg" alt="">
-        <img src="images/6.jpg" alt="">
-        <img src="images/7.jpg" alt="">
-        <img src="images/8.jpg" alt="">
-        <img src="images/9.jpg" alt="">
+        <img id="imagen1" src="images/o1.jpg" alt="">
+        <img id="imagen2" src="images/2.jpg" alt="">
+        <img id="imagen3" src="images/3.jpg" alt="">
+        <img id="imagen4" src="images/4.jpg" alt="">
+        <img id="imagen5" src="images/5.jpg" alt="">
+        <img id="imagen6" src="images/6.jpg" alt="">
+        <img id="imagen7" src="images/7.jpg" alt="">
+        <img id="imagen8" src="images/8.jpg" alt="">
+        <img id="imagen9" src="images/9.jpg" alt="">
     </div>
 </body>
 </html>

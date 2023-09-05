@@ -4,80 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body{
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 80%;
-        }
-        h1{
-            background-color: cadetblue;
-            padding: 5%; 
-            margin: 5% 25%;
-        }
-        .text{
-            margin: 5%;
-            border: 5px solid cadetblue;
-            padding: 5%;
-        }
-        .text p{
-            margin-bottom: 5%;
-        }
-        table{
-            margin: auto;
-            
-        }
-        td{
-            padding: 10%;
-        }
-        .text-button{
-            border: none;
-            padding: 2.5% 5%;
-            cursor: pointer;
-            font-size: 110%;
-        }
-        #gallery{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-            margin: 5%;
-        }
-        #gallery img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .boton{
-            width: 80px;
-            text-align: center;
-            border: none;
-            background-color: cadetblue;
-            padding-top: 0.5%;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .boton img{
-            width: 35%;
-        }
-        .oscuro{
-            background-color: rgb(32, 32, 32);
-            color: white;
-        }
-    </style>
+    <link rel="stylesheet" href="css/prueba.css">
     <script src="jquery-3.7.0.min.js"></script>
     <script>
         $(document).ready(()=>{
             
             //cambia la primera imagen con un click
-            var imagenes = document.querySelectorAll("#gallery img");
+            /*var imagenes = document.querySelectorAll("#gallery img");
             for(i=0;i<imagenes.length;i++){
                 imagenes[i].addEventListener("click", cambiarImagen, false);
-            }
+            }*/
 
             //boton para cambiar el color de fondo del body
             document.getElementById("boton").addEventListener("click", oscurecer, false);
@@ -90,26 +26,25 @@
             var elementos=document.querySelectorAll("img");
 
             for(var i=0;i<elementos.length;i++){
-                elementos.addEventListener("mouseover", subirOpacidad, false);
-            }
-
-            var elementos=document.querySelectorAll("img");
-
-            for(var i=0;i<elementos.length;i++){
-                elementos.addEventListener("mouseout", bajarOpacidad, false);
+                elementos[i].addEventListener("mouseover", subirOpacidad, false);
+                elementos[i].addEventListener("mouseout", bajarOpacidad, false);
             }
         });
-        
-        function cambiarImagen (num){
+
+        //cambia la primera imagen con un click
+        /*function cambiarImagen (num){
             if(num.target==imagen1){
                 $("#imagen1").replaceWith("<img id='imagen1' src='images/0.jpg'>");
             }
-        }
+        }*/
+
+        //boton para cambiar el color de fondo del body
         function oscurecer(){
             $("body").toggleClass("oscuro");
             $(".text").toggleClass("oscuro");
         }
 
+        //botones de texto
         function zoom_in(){
             var size = $("#lore").css("font-size");
             size = parseInt(size);
@@ -126,14 +61,44 @@
         function subirOpacidad(e){
             if(e.target==imagen1){
                 $("#imagen1").attr("src", "images/1.jpg");
+            }else if(e.target==imagen2){
+                $("#imagen2").attr("src", "images/2.jpg");
+            }else if(e.target==imagen3){
+                $("#imagen3").attr("src", "images/3.jpg");
+            }else if(e.target==imagen4){
+                $("#imagen4").attr("src", "images/4.jpg");
+            }else if(e.target==imagen5){
+                $("#imagen5").attr("src", "images/5.jpg");
+            }else if(e.target==imagen6){
+                $("#imagen6").attr("src", "images/6.jpg");
+            }else if(e.target==imagen7){
+                $("#imagen7").attr("src", "images/7.jpg");
+            }else if(e.target==imagen8){
+                $("#imagen8").attr("src", "images/8.jpg");
+            }else if(e.target==imagen9){
+                $("#imagen9").attr("src", "images/9.jpg");
             }
-            
         }
-
         function bajarOpacidad(e){
             if(e.target==imagen1){
                 $("#imagen1").attr("src", "images/o1.jpg");
-            }        
+            }else if(e.target==imagen2){
+                $("#imagen2").attr("src", "images/o2.jpg");
+            }else if(e.target==imagen3){
+                $("#imagen3").attr("src", "images/o3.jpg");
+            }else if(e.target==imagen4){
+                $("#imagen4").attr("src", "images/o4.jpg");
+            }else if(e.target==imagen5){
+                $("#imagen5").attr("src", "images/o5.jpg");
+            }else if(e.target==imagen6){
+                $("#imagen6").attr("src", "images/o6.jpg");
+            }else if(e.target==imagen7){
+                $("#imagen7").attr("src", "images/o7.jpg");
+            }else if(e.target==imagen8){
+                $("#imagen8").attr("src", "images/o8.jpg");
+            }else if(e.target==imagen9){
+                $("#imagen9").attr("src", "images/o9.jpg");
+            }     
         }
     
     </script>
@@ -153,14 +118,14 @@
     
     <div id="gallery">
         <img id="imagen1" src="images/o1.jpg" alt="">
-        <img id="imagen2" src="images/2.jpg" alt="">
-        <img id="imagen3" src="images/3.jpg" alt="">
-        <img id="imagen4" src="images/4.jpg" alt="">
-        <img id="imagen5" src="images/5.jpg" alt="">
-        <img id="imagen6" src="images/6.jpg" alt="">
-        <img id="imagen7" src="images/7.jpg" alt="">
-        <img id="imagen8" src="images/8.jpg" alt="">
-        <img id="imagen9" src="images/9.jpg" alt="">
+        <img id="imagen2" src="images/o2.jpg" alt="">
+        <img id="imagen3" src="images/o3.jpg" alt="">
+        <img id="imagen4" src="images/o4.jpg" alt="">
+        <img id="imagen5" src="images/o5.jpg" alt="">
+        <img id="imagen6" src="images/o6.jpg" alt="">
+        <img id="imagen7" src="images/o7.jpg" alt="">
+        <img id="imagen8" src="images/o8.jpg" alt="">
+        <img id="imagen9" src="images/o9.jpg" alt="">
     </div>
 </body>
 </html>

@@ -4,54 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body{
-            background-color: cadetblue;
-            color: white;
-            text-align: center;
-        }
-        h1{
-            margin: 5%;
-        }
-        form{
-            margin: 5%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        th a{
-            color: white;
-        }
-        fieldset{
-            margin: 5%;
-            padding: 5%;
-        }
-    </style>
+    <link rel="stylesheet" href="css/formulario.css">
     <script src="../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("html").dblclick(()=>{
+                alert("Hola, has hecho doble click");
+            });
+            
+            $("a").mouseover(()=>{
+                var mensaje = "<p>Estás pasando el ratón por encima del link</p>";
+                /*
+                Con la siguiente instrucción señalamos donde se escribirá el 
+                mensaje, es decir, después del siguiente elemento del body:
+                */
+                $("#principal").append(mensaje);
+            });
+
+            $("#el_boton").click(()=>{
+                var mensaje = "Para de hacer click";
+                $(this).val(mensaje);
+            });
+            
+            $("#el_campo").focus(()=>{
+                $(this).val("Ahora vas a escribir aquí");
+            });
+        });
+        
+
+    </script>
 </head>
-<body>
+<body id="principal">
     <h1>Introducción a eventos</h1>
-    <form action="">
+    <form action="#" method="get">
         <table>
-            <th><a href="">Un link</a></th>
+            <th><a href="#">Un link</a></th>
             <tr>
                 <td>
                     <fieldset>
                         <legend>Formulario</legend>
-                        <input type="button" value="Un botón">
-                        <input type="text">
+                        <input type="button"  name="button" value="Un botón" id="el_boton">
+                        <input type="text"  name="textfield" id="el_campo">
                     </fieldset>
                 </td>
             </tr>
             
         </table>
-        
     </form>
 </body>
 </html>

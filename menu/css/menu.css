@@ -1,0 +1,36 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#menu-principal{
+    position: relative;
+    list-style: none;
+    margin: 5%;
+}
+li{
+    background-color: beige;
+    border: 2px solid rgb(218, 218, 166);
+}
+li a{
+    text-decoration: none;
+    color: black;
+}
+#menu-principal li{
+    display: inline;
+    margin: 0%;
+    padding: 2% 5%;
+    align-items: center;
+}
+#desplegable{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+}
+#desplegable li{
+    width: 120%;
+    padding: 10%;
+    margin-top: 5%;
+}

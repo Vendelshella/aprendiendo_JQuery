@@ -23,14 +23,42 @@
 
             $("#el_boton").click(()=>{
                 var mensaje = "Para de hacer click";
-                $(this).val(mensaje);
+                $("#el_boton").val(mensaje);
             });
             
             $("#el_campo").focus(()=>{
-                $(this).val("Ahora vas a escribir aquí");
+                $("#el_campo").val("Ahora vas a escribir aquí");
             });
-        });
+
+            //esconder el mensaje
+            $("#mensaje_link").hide();
+            //funcion para mostralo cuando se pasa el ratón por encima
+            $("a").hover(
+                ()=>{$("#mensaje_link").show();},
+                ()=>{$("#mensaje_link").hide();}
+                );
+
+            //texto imagenes
+            $("#text-img1").hide();
+            $("#text-img2").hide();
+            $("#text-img3").hide();
+
+            $("#img1").hover(
+                ()=>{$("#text-img1").show();},
+                ()=>{$("#text-img1").hide();}
+            )
+            $("#img2").hover(
+                ()=>{$("#text-img2").show();},
+                ()=>{$("#text-img2").hide();}
+            )
+            $("#img3").hover(
+                ()=>{$("#text-img3").show();},
+                ()=>{$("#text-img3").hide();}
+            )
+            
+            });
         
+            
 
     </script>
 </head>
@@ -41,6 +69,11 @@
             <th><a href="#">Un link</a></th>
             <tr>
                 <td>
+                    <p id="mensaje_link">Este link no te lleva a ningún sitio</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <fieldset>
                         <legend>Formulario</legend>
                         <input type="button"  name="button" value="Un botón" id="el_boton">
@@ -48,8 +81,13 @@
                     </fieldset>
                 </td>
             </tr>
-            
         </table>
+        <div id="imagenes">
+            <figure><img id="img1" src="img/1.jpg" alt="Playa en la ciudad"><figcaption id="text-img1">Playa en la ciudad</figcaption></figure>
+            <figure><img id="img2" src="img/2.jpg" alt="Playa en la ciudad"><figcaption id="text-img2">Ciudad al atardecer</figcaption></figure>
+            <figure><img id="img3" src="img/3.jpg" alt="Playa en la ciudad"><figcaption id="text-img3">Ciudad brasileña</figcaption></figure>
+        </div>
+        
     </form>
 </body>
 </html>

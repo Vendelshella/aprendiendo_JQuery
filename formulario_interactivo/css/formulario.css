@@ -18,10 +18,31 @@ form{
     flex-direction: column;
     align-items: center;
 }
+td{
+    padding: 5% 0%;
+}
 th a{
     color: white;
 }
 fieldset{
     margin: 5%;
     padding: 5%;
+}
+#mensaje_link{
+    position: absolute;
+}
+#imagenes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5%;
+}
+#imagenes figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+figcaption{
+    position: absolute;
+    /*no se me centra*/
+    text-align: center;
 }

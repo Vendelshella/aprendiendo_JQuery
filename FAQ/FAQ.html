@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/FAQ.css">
+    <script src="../jquery-3.7.0.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $(".respuesta").hide();
+            $(".principal h3").click(function(){
+                $(this).toggleClass("cerrar").next(".respuesta").fadeToggle();
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1 class="titulo">Empresa de Desarrollo Web Ficticia</h1>
+
+    <div class="principal">
+        <h3>¿Qué servicios de desarrollo web ofrece su empresa?</h3>
+        <div class="respuesta">
+            <p>
+                Ofrecemos una amplia gama de servicios de desarrollo web, 
+                que incluyen diseño web personalizado, desarrollo de 
+                aplicaciones web, desarrollo de comercio electrónico, 
+                optimización de sitios web y más.
+            </p>
+        </div>
+        <h3>¿Cómo se diferencia su empresa de otras agencias de desarrollo web?</h3>
+        <div class="respuesta">
+            <p>
+                Nos diferenciamos por nuestra atención personalizada a 
+                cada cliente, la calidad de nuestro trabajo, 
+                la experiencia de nuestro equipo y nuestra capacidad 
+                para adaptarnos a las necesidades específicas de cada proyecto.
+            </p>
+        </div>
+        <h3>¿Tienen experiencia en el desarrollo de sitios web para mi industria o nicho de mercado?</h3>
+        <div class="respuesta">
+            <p>
+                Sí, hemos trabajado en una amplia variedad de proyectos en 
+                diversas industrias. Nuestro enfoque es entender las 
+                particularidades de su negocio y adaptar nuestras soluciones 
+                a sus necesidades específicas.
+            </p>
+        </div>
+        <h3>¿Cuál es el proceso de desarrollo web que siguen?</h3>
+        <div class="respuesta">
+            <p>
+                Nuestro proceso comienza con una consulta inicial para 
+                comprender sus objetivos. Luego, pasamos a la planificación,
+                 diseño, desarrollo y pruebas. Finalmente, entregamos el 
+                 proyecto y ofrecemos soporte continuo si es necesario.
+            </p>
+        </div>
+        <h3>¿Qué tecnologías utilizan en el desarrollo de sitios web?</h3>
+        <div class="respuesta">
+            <p>
+                Utilizamos una variedad de tecnologías, incluyendo HTML5, 
+                CSS3, JavaScript, PHP, Python, y CMS populares como 
+                WordPress y Drupal. Adaptamos las tecnologías a las 
+                necesidades específicas de cada proyecto.
+            </p>
+        </div>
+        <h3>¿Cómo manejan la seguridad de los sitios web que desarrollan?</h3>
+        <div class="respuesta">
+            <p>
+                La seguridad es una prioridad para nosotros. Implementamos las 
+                mejores prácticas de seguridad, como encriptación SSL, protección 
+                contra ataques de SQL injection y Cross-Site Scripting (XSS), y 
+                actualizamos regularmente los sistemas para mantenerlos seguros.
+            </p>
+        </div>
+        <h3>¿Ofrecen servicios de mantenimiento y actualización de sitios web después del lanzamiento?</h3>
+        <div class="respuesta">
+            <p>
+                Sí, ofrecemos servicios de mantenimiento y actualización para 
+                garantizar que su sitio web esté siempre actualizado y funcione 
+                sin problemas.
+            </p>
+        </div>
+        <h3>¿Cuál es el costo de desarrollar un sitio web con su empresa?</h3>
+        <div class="respuesta">
+            <p>
+                El costo depende de muchos factores, como la funcionalidad requerida, 
+                el diseño, el tamaño del sitio y otros elementos personalizados. 
+                Estamos encantados de discutir sus necesidades y proporcionar un 
+                presupuesto personalizado.
+            </p>
+        </div>
+        <h3>¿Cómo podemos poner en marcha un proyecto con su empresa de desarrollo web?</h3>
+        <div class="respuesta">
+            <p>
+                ¡Es fácil! Simplemente póngase en contacto con nosotros a través 
+                de nuestro sitio web o por teléfono para programar una consulta 
+                inicial. A partir de ahí, trabajaremos juntos para llevar su 
+                proyecto de desarrollo web al siguiente nivel.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

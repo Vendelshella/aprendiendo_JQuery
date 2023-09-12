@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: aliceblue;
+    color:rgb(114, 113, 1);
+}
+h1{
+    text-align: center;
+    margin: 5%;
+}
+.principal{
+    margin: 5%;
+}
+
+h3{
+    margin: 2% 0;
+    padding-left: 5%;
+    background-image: url(../img/mas.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+h3 .cerrar{
+    background-image: url(../img/menos.png);
+}

@@ -20,9 +20,10 @@ h3{
     margin: 2% 0;
     padding-left: 5%;
     background-image: url(../img/mas.png);
+    background-size: 5%;
     background-repeat: no-repeat;
     cursor: pointer;
 }
-h3 .cerrar{
+h3.cerrar{
     background-image: url(../img/menos.png);
 }

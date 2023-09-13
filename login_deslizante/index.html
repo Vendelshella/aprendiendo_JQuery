@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#abierto").click(()=>{
+                //deslizante
+                $("form").slideToggle();
+                //apareciendo y desvaneciendose
+                //$("form").fadeToggle();
+                $("#abierto").toggleClass("cerrar");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="ventana_login">
+        <h3 id="abierto">Login</h3>
+        <form action="">
+            <p id="p1">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="usuario">
+            </p>
+            <p>
+                <label for="password">Password: </label>
+                <input type="text" name="password" id="contraseña">
+            </p>
+        </form>
+    </div>
+    <div class="principal">
+        <h1>Bienvenido a mi página</h1>
+        <h2>Login deslizante</h2>
+        <hr>
+        <h3>Haz clic en el botón de login</h3>
+        <hr>
+    </div>
+</body>
+</html>

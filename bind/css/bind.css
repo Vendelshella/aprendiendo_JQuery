@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    text-align: center;
+    margin-top: 5%;
+}
+#imagen_grande{
+    border: 2px dotted grey;
+    position: absolute;
+    margin: 5%;
+    width: 90%;
+    height: 50%;
+}
+p{
+    margin:5%;
+}
+#img-p3{
+    display: flex;
+    flex-direction: column;
+}
+#imagen1{
+    width: 25%;
+    margin: 1% 5% 2% 5%;
+    float: left;
+    cursor: pointer;
+}
+#p3{
+    margin: 0 5%;
+}

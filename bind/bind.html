@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bind.css">
+    <script src="../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var ruta_img1=$("#imagen1").attr("src");
+            $("#imagen_grande").hide();
+
+            $("#imagen1").bind("click", ruta_img1, agrandar);
+            
+        });
+
+        function agrandar(e){
+            //frena el click y deja de actuar en los objetos que están fuera de la imagen
+            e.stopPropagation();
+            $("#imagen_grande").fadeIn(1000);
+            $("#img_sustitucion").replaceWith("<img src='" + e.data + "' width='100%' height='100%'>");
+        }
+        
+        $(document).bind("click keypress", desaparecer);
+        
+        function desaparecer(){
+            $("#imagen_grande").fadeOut(1000);
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>Brasil</h1>
+    <div id="imagen_grande"><img src="" alt="" id="img_sustitucion"></div>
+    <p>
+        Brasil, la nación más grande de América del Sur, es un país de contrastes 
+        y diversidad que fascina a quienes lo exploran. Su extenso territorio alberga 
+        una riqueza natural impresionante, desde la majestuosidad de la selva amazónica 
+        hasta las playas de arena blanca que bordean su costa atlántica. La biodiversidad 
+        de Brasil es asombrosa, con una abundancia de especies de plantas y animales 
+        únicas en el mundo, lo que lo convierte en un destino obligado para los amantes 
+        de la naturaleza y la ecología.
+    </p>
+    <p>
+        La cultura brasileña es igualmente cautivadora. La música, con géneros como la samba, 
+        el bossa nova y el funk carioca, resuena en las calles y hace que sea imposible evitar 
+        mover los pies al ritmo de sus melodías. El carnaval de Río de Janeiro es uno de los 
+        eventos más famosos del mundo, donde miles de personas se congregan para celebrar con 
+        coloridos desfiles y bailes vibrantes. La gastronomía brasileña también es un deleite 
+        para los sentidos, con platos como la feijoada, la caipirinha y el acarajé que reflejan 
+        la diversidad de influencias culturales que han moldeado la cocina del país.
+    </p>
+    <div id="img-p3"></div>
+        <img src="img/9.jpg" alt="" id="imagen1">
+        <p id="p3">
+            Sin embargo, Brasil también enfrenta desafíos significativos, como la desigualdad 
+            económica y social, así como la deforestación en la Amazonia, que afecta gravemente 
+            al medio ambiente global. A pesar de estos obstáculos, el espíritu resiliente y 
+            apasionado de los brasileños sigue brillando, y el país sigue siendo un lugar de 
+            asombroso encanto y vitalidad. Brasil es una tierra de contrastes, donde la belleza 
+            natural, la cultura vibrante y las dificultades cotidianas se entrelazan para formar 
+            una nación única y fascinante que merece ser explorada y comprendida en toda su complejidad.
+        </p>
+    </div>
+</body>
+</html>

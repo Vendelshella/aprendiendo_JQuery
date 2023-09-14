@@ -4,28 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="css/prueba.css">
     <script src="../jquery-3.7.0.min.js"></script>
     <script>
         $(document).ready(()=>{
             
-            //guardo unas coordenadas aleatorias
+            //creo un objeto para guardar unas coordenadas aleatorias
             var aleatorias = {
                 x: 0,
                 y: 0
             };
 
-            //medidas del navegador
-
+            //obtengo las medidas del navegador
             var ventanaAncho = window.innerWidth;
             var ventanaAlto = window.innerHeight;
 
+            //generamos números aleatorios con .random()
             aleatorias.x = Math.floor(Math.random() * ventanaAncho);
             aleatorias.y = Math.floor(Math.random() * ventanaAlto);
 
             console.log(aleatorias);
 
-            //quiero guardar las coordenadas del click del usuario
+            //guardo las coordenadas de click del usuario
             $(document).on("click", (e)=>{
                 var coordenadas = {
                     x: 0,
@@ -37,17 +37,43 @@
 
                 console.log(coordenadas);
 
-                var distancia = Math.sqrt(coordenadas.x * coordenadas.x + coordenadas.y * coordenadas.y);
+                var distancia = getDistancia(e, aleatorias);
 
-            if((coordenadas.x==aleatorias.x) && (coordenadas.y==aleatorias.y)){
+                var pista = getPista(distancia);
+                
+            if(distancia < 40){
                 console.log("Encontraste la coordenada");
+                location.reload();
             }else{
-                console.log("Sigue intentándolo");
+                console.log(pista);
             }
             
             });
         
         });
+
+        //creo una funcion para hallar la distancia desde el click hasta las coordenadas aleatorias
+        function getDistancia (e, aleatorias){
+            let diffX = e.offsetX - aleatorias.x;
+            let diffY = e.offsetY - aleatorias.y;
+
+            return Math.sqrt(diffX * diffX + diffY * diffY);
+        }
+        function getPista(distancia) {
+            if (distancia > 1500) {
+                return "muy, muy lejos";
+            } else if (distancia > 1000) {
+                return "muy lejos";
+            } else if (distancia > 600) {
+                return "cerca";
+            } else if (distancia > 300) {
+                return "muy cerca";
+            } else if (distancia > 100) {
+                return "casi casi";
+            } else {
+                return "Encontraste la coordenada";
+            }
+        }
     </script>
 </head>
 <body>

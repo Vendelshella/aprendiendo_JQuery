@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src="../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            var radio = 10;
+            //guardo unas coordenadas aleatorias
+            var aleatorias = {
+                x: 0,
+                y: 0
+            };
+
+            //medidas del navegador
+
+            var ventanaAncho = window.innerWidth;
+            var ventanaAlto = window.innerHeight;
+
+            aleatorias.x = Math.floor(Math.random() * ventanaAncho);
+            aleatorias.y = Math.floor(Math.random() * ventanaAlto);
+
+            console.log(aleatorias);
+
+            //quiero guardar las coordenadas del click del usuario
+            $(document).on("click", (e)=>{
+                var coordenadas = {
+                    x: 0,
+                    y: 0
+                };
+                
+                coordenadas.x = e.clientX;
+                coordenadas.y = e.clientY;
+
+                console.log(coordenadas);
+
+                //teorema de pitágoras para obtener la distancia de las coordenadas del click y las coordenadas aleatorias
+                var distancia = Math.sqrt(coordenadas.x * coordenadas.x + coordenadas.y * coordenadas.y);
+
+            if((distancia <= radio)){
+                console.log("Encontraste la coordenada");
+            }else{
+                console.log("Sigue intentándolo");
+            }
+            
+            });
+        
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

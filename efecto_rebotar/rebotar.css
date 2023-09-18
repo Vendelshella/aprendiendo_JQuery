@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: bisque;
+}
+.menu{
+    padding: 10px;
+    position: relative;
+    width: 75px;
+    height: 300px;
+    left: -60px;
+    background-color: brown;
+}
+.seccion{
+    width: 40px;
+    height: 40px;
+    background-color: chocolate;
+    margin: 10%;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <style>
+    img{
+        opacity: 0.5;
+        width: 200px;
+    }
+    </style>
+    <script>
+        $(document).ready(()=>{
+            
+            $(".imagen").each(function() {
+                $(this).hover(cambiar, restaurar);
+            });
+        
+        });
+        function cambiar() {
+            $(this).css({ opacity: "1" });
+        }
+
+        function restaurar() {
+            $(this).css({ opacity: "0.5" });
+        }
+    </script>
+</head>
+<body>
+        <img  class="imagen" id="imagen1" src="img/1.jpg" alt="">
+        <img  class="imagen" id="imagen2" src="img/2.jpg" alt="">
+        <img  class="imagen" id="imagen3" src="img/3.jpg" alt="">
+</body>
+</html>

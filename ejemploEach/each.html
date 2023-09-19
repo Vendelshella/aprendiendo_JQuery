@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+        $("#boton").click(function(){
+		    $("#listas li").each(function(){
+        	    alert($(this).text());
+        	});
+        });
+    });
+    </script>
+</head>
+<body>
+    <ul id="listas">
+        <li>Elemento lista 1</li>
+        <li>Elemento lista 2</li>
+        <li>Elemento lista 3</li>
+  </ul>
+  <input type="button" id="boton" value="Recorrer lista">
+</body>
+</html>

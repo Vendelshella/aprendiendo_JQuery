@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            margin: 10px;
+        }
+        .mivinculo{
+            top: 10px;
+            margin: 20px;
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+        form{
+            position: absolute;
+            top: 40px;
+            left: 20px;
+        }
+        form td{
+            padding: 5px;
+        }
+        #button{
+            padding: 5px;
+        }
+    </style>
+    <script src="../../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            //esconder formulario
+            $("#miformulario").hide();
+
+            $("#mivinculo").click((e)=>{
+                //mostrar formulario cuando se hace clic en el vínculo
+                $("#miformulario").fadeIn(1000);
+                //detiene que el vínculo nos lleve a google por defecto, detiene su comportamiento
+                e.preventDefault();
+
+                //return false; Hace lo mismo
+            });
+            //ventana emergente
+            open("https://www.szmblog.es/", "SZM", width="300px", height="200px");
+        });
+    </script>
+</head>
+<body>
+    <a href="http://www.google.es" class="mivinculo" id="mivinculo">Haz login</a>
+
+    <form name="form1" method="post" id="miformulario" action="">
+        <table>
+            <tr>
+                <td>Usuario</td>
+                <td>
+                    <label for="textfield"></label>
+                    <input type="text" name="textfield" id="textfield">
+                </td>
+            </tr>
+            <tr>
+                <td>Contraseña</td>
+                <td>
+                    <label for="textfield2"></label>
+                    <input type="text" name="textfield2" id="textfield2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><input type="submit" name="button" id="button" value="Enviar"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

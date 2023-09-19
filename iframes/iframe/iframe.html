@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: azure;
+            color:cornflowerblue;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+        }
+        #contenedor{
+            background-color: cornflowerblue;
+            width: 600px;
+            height: 300px;
+            margin: 10px auto;
+
+        }
+        #pulsar{
+            text-decoration: none;
+            color: cornflowerblue;
+            border: 1px solid cornflowerblue;
+            border-radius: 3px;
+            padding: 5px;
+        }
+        iframe{
+            width: 600px;
+            height: 300px;
+        }
+    </style>
+    <script src="../../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            $("#pulsar").click((e)=>{
+                //cambiar el comportamiento del link, como si fuera un botón
+                e.preventDefault();
+                $("#iframe").attr("src", "https://www.szmblog.es/");
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1>Mi página web</h1>
+    <div id="contenedor"><iframe id="iframe" src="" frameborder="0"></iframe></div>
+    <a href="" id="pulsar">Pulsar</a>
+</body>
+</html>

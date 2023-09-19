@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            position: relative;
+            margin: 10px;
+        }
+        .mivinculo{
+            top: 10px;
+            margin: 20px;
+            padding: 5px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+    </style>
+    <script src="../../jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(()=>{
+            
+            //ventana emergente
+            var miVentana = open("https://www.szmblog.es/", "SZM", width="300px", height="200px");
+
+            $("#cerrar").click((e)=>{
+                e.preventDefault();
+                miVentana.close();
+                
+                //return false; Hace lo mismo
+            });
+            
+        });
+    </script>
+</head>
+<body>
+    <a href="https://www.szmblog.es/" class="mivinculo" id="login">Haz login</a>
+    <br><br><br>
+    <a href="" class="mivinculo" id="cerrar">Cerrar</a>
+    
+</body>
+</html>

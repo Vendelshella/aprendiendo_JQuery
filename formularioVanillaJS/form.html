@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<!--En este formulario mediante JS puro he creado una función que resetea los input tipo text
+según el radiobutton que sea pulsado, las casillas se bloquean y se limpian al darle click al 
+otro radiobutton-->
+
+<form id="myForm">
+    Hombre<input type="radio" id="hombre" value="hombre" name="sexo" onclick="resetear('mname', 'wname')">
+    Mujer<input type="radio" id="mujer" value="mujer" name="sexo" onclick="resetear('wname', 'mname')"><br><br>
+  
+  Man name: <input id="mname" type="text" name="mname" disabled><br><br>
+  Woman name: <input id="wname" type="text" name="wname" disabled><br>
+  <input type="submit" value="Send">
+</form>
+
+<script>
+
+function resetear(elemento1, elemento2) {
+    document.getElementById(elemento1).removeAttribute("disabled");
+    document.getElementById(elemento2).setAttribute("disabled", "true");
+    document.getElementById(elemento1).value = "";
+    document.getElementById(elemento2).value = "";
+}
+</script>
+
+</body>
+</html>

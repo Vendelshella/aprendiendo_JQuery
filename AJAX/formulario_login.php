@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!--Para esta práctica hay que activar xampp y abrir este documento html en localhost-->
-    <script src="jquery-3.7.0.min.js"></script>
+    <script src="../jquery-3.7.0.min.js"></script>
     <script>
         $(document).ready(()=>{
             $("#login").submit(()=>{
@@ -18,8 +17,8 @@
                 // Cuando el formulario tiene muchos datos a enviar se puede usar la funcion serialize()
                 // var datosFormulario = $(this).serialize();
 
-                // Enviar el paquete al servidor y con una función encadenada manejar errores
-                $.post("login.php", datosFormulario, procesarDatos).fail(procesarError);
+                // Enviar el paquete al servidor
+                $.get("login.php", datosFormulario, procesarDatos);
 
                 // Anular el comportamiento del botón submit ya que nos llevaría a otra página al enviar la información.
                 return false;
@@ -35,15 +34,10 @@
             }
         }
 
-        function procesarError(){
-            var msgError = "Ooops! Ha ocurrido algo inesperado. Intentalo más tarde";
-            //Mostrar el mensaje de error
-            $("#contenidos_externos").html("<p>" + msgError + "</p>");
-        }
     </script>
 </head>
 <body>
-    <form action="login.php" method="post" id="login">
+    <form action="login.php" method="get" id="login">
         <table>
             <tr>
                 <td><label for="usuario">Usuario:</label></td>
